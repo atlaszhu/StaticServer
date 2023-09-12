@@ -24,7 +24,7 @@ function startServer() {
       /******** 处理请求 ************/
 
       console.log("收到请求！url 是" + fullUrl);
-      const filePath = path === "/" ? "/index.html" : path; //默认首页
+      const filePath = dirPath + (path === "/" ? "/index.html" : path); //默认首页
       const fileTypes = {
         ".html": "text/html",
         ".css": "text/css",
@@ -34,7 +34,7 @@ function startServer() {
       };
       let content;
       try {
-        content = fs.readFileSync(dirPath + filePath);
+        content = fs.readFileSync(filePath);
         response.statusCode = 200;
         const suffix = filePath.substring(filePath.lastIndexOf("."));
         response.setHeader("Content-Type", `${fileTypes[suffix] || "text/html"};charset=utf-8`);
