@@ -3,4 +3,6 @@
 # 使用方法
 ```js
 node StaticServer.js [端口号] [文件夹路径]
+//比如
+node StaticServer.js 8888 .
 ```
