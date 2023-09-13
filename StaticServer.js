@@ -44,7 +44,7 @@ function startServer() {
         response.statusCode = 404;
         response.setHeader("Content-Type", "text/html;charset=utf-8");
       }
-      response.write(content); //根据url来形成查询路径
+      response.write(content);
       response.end();
     },
 
